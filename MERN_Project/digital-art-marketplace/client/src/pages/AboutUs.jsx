@@ -28,10 +28,10 @@ function AboutUs() {
           <h3>Our Contributors</h3>
           <p>We are proud to collaborate with some of the most talented artists and developers:</p>
           <ul>
-            <li>Mrunalini Kulkarni</li>
-            <li>Archana Ba Parmar </li>
-            <li>Prathama Mehta </li>
-            <li>Devangini Parmar </li>
+            <li>Mrunalini Kulkarni - Main Engineer</li>
+            <li>Archana Ba Parmar - UI/UX Designer </li>
+            <li>Prathama Mehta - Backend Developer </li>
+            <li>Devangini Parmar - Frontend Developer</li>
           </ul>
         </section>
 
