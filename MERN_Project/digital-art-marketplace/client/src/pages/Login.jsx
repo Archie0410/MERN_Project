@@ -1,7 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 
@@ -12,7 +12,7 @@ function Login() {
     userType: 'customer', // Default to customer
   });
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -26,7 +26,8 @@ function Login() {
       alert('Logged in successfully!');
       navigate('/'); // Redirect to Home page after successful login
     } catch (error) {
-      alert('Failed to login');
+      console.error('Login error:', error.response ? error.response.data : error.message);
+      alert('Failed to login: ' + (error.response ? error.response.data.message : error.message));
     }
   };
 

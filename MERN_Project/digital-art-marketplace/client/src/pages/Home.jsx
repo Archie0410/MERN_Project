@@ -1,38 +1,31 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
-
-// Static data for art pieces, categories, artists, and testimonials
-const artPieces = [
+// Static data for trending collections, categories, artists, and testimonials
+const trendingCollections = [
   {
     id: 1,
     image: 'https://t4.ftcdn.net/jpg/07/18/74/13/360_F_718741301_uAMuxLHYGSzECHNoTn4J7qTFWWBdd5Ke.jpg',
-    title: 'Sunset Dreams',
+    title: 'Nature’s Beauty',
     artist: 'John Doe',
-    price: 150,
-    genre: 'Landscape',
-    description: 'A beautiful depiction of a sunset over the mountains.',
+    description: 'A collection of breathtaking landscapes from around the world.',
   },
   {
     id: 2,
     image: 'https://images-cdn.ubuy.co.in/634e37b7d57ac13b6907b5b8-v-inspire-art-30x40-inch-abstract-art.jpg',
-    title: 'Abstract Vibes',
+    title: 'Abstract Emotions',
     artist: 'Jane Smith',
-    price: 200,
-    genre: 'Abstract',
-    description: 'An abstract piece full of vibrant colors and emotions.',
+    description: 'Vibrant abstract art that evokes deep emotions.',
   },
   {
     id: 3,
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Vtm0GkGVCXJwcf4SlJzacdiNbyrtHXxsHg&s',
-    title: 'City Lights',
+    title: 'Urban Life',
     artist: 'Alex Johnson',
-    price: 180,
-    genre: 'Urban',
-    description: 'A stunning view of a city skyline at night.',
+    description: 'A glimpse into the hustle and bustle of city life.',
   },
 ];
 
@@ -46,19 +39,19 @@ const categories = [
 const featuredArtists = [
   {
     id: 1,
-    name: 'John Doe',
+    name: 'Sadap',
     image: 'https://via.placeholder.com/100',
     bio: 'A passionate landscape artist.',
   },
   {
     id: 2,
-    name: 'Jane Smith',
+    name: 'Treesha',
     image: 'https://via.placeholder.com/100',
     bio: 'Specializes in abstract art.',
   },
   {
     id: 3,
-    name: 'Alex Johnson',
+    name: 'Zinal',
     image: 'https://via.placeholder.com/100',
     bio: 'Urban art enthusiast.',
   },
@@ -83,27 +76,11 @@ const testimonials = [
 ];
 
 function Home({ addToCart }) {
-  const [selectedGenre, setSelectedGenre] = useState('All');
-  const [selectedArtist, setSelectedArtist] = useState('All');
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
-  const [sortBy, setSortBy] = useState('price');
-  const [flippedId, setFlippedId] = useState(null);
   const navigate = useNavigate(); // Initialize useNavigate
-
-  // Filter and sort art pieces
-  const filteredArtPieces = artPieces
-    .filter((piece) => {
-      const matchesGenre = selectedGenre === 'All' || piece.genre === selectedGenre;
-      const matchesArtist = selectedArtist === 'All' || piece.artist === selectedArtist;
-      const matchesPrice = piece.price >= minPrice && piece.price <= maxPrice;
-      return matchesGenre && matchesArtist && matchesPrice;
-    })
-    .sort((a, b) => (sortBy === 'price' ? a.price - b.price : 0));
 
   // Handle Explore Artworks button click
   const handleExploreArtworks = () => {
-    navigate('/collections'); // Redirect to Collections page
+    navigate('/CollectionPage'); // Redirect to CollectionPage
   };
 
   return (
@@ -116,44 +93,18 @@ function Home({ addToCart }) {
           <button onClick={handleExploreArtworks}>Explore Artworks</button>
         </div>
       </section>
-      
 
-
-      {/* Featured Artworks */}
-      <section className="featured-artworks">
-        <h2>Featured Artworks</h2>
-        <div className="art-grid">
-          {filteredArtPieces.map((piece) => (
-            <div
-              key={piece.id}
-              className={`art-card ${flippedId === piece.id ? 'flipped' : ''}`}
-              onClick={() => setFlippedId(flippedId === piece.id ? null : piece.id)}
-            >
-              <div className="art-card-inner">
-                {/* Front Side */}
-                <div className="art-card-front">
-                  <img src={piece.image} alt={piece.title} />
-                  <h3>{piece.title}</h3>
-                  <p>{piece.artist}</p>
-                  <p>${piece.price}</p>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      addToCart(piece);
-                    }}
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-
-                {/* Back Side */}
-                <div className="art-card-back">
-                  <h3>{piece.title}</h3>
-                  <p>{piece.description}</p>
-                  <p>Artist: {piece.artist}</p>
-                  <p>Price: ${piece.price}</p>
-                  <p>Genre: {piece.genre}</p>
-                </div>
+      {/* Trending Collections */}
+      <section className="trending-collections">
+        <h2>Trending Collections</h2>
+        <div className="collections-grid">
+          {trendingCollections.map((collection) => (
+            <div key={collection.id} className="collection-card">
+              <img src={collection.image} alt={collection.title} />
+              <div className="collection-info">
+                <h3>{collection.title}</h3>
+                <p>By {collection.artist}</p>
+                <p>{collection.description}</p>
               </div>
             </div>
           ))}
@@ -202,7 +153,7 @@ function Home({ addToCart }) {
 
       {/* Footer */}
       <footer className="footer">
-        <p>&copy; 2023 Digital Art Marketplace. All rights reserved.</p>
+        <p>&copy; 2025 Digital Art Marketplace. All rights reserved.</p>
         <div className="footer-links">
           <a href="/about-us">About Us</a>
           <a href="/contact">Contact</a>

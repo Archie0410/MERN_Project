@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Register.css';
 
@@ -14,7 +14,7 @@ function Register() {
     userType: 'customer', // Default to customer
   });
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -22,12 +22,19 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user.name || !user.mobile || !user.email || !user.address || !user.password) {
+      alert('Please fill out all fields');
+      return;
+    }
     try {
-      await axios.post('http://localhost:5000/api/auth/register', user);
-      alert('Registered successfully!');
-      navigate('/'); // Redirect to Home page after successful registration
+      const response = await axios.post('http://localhost:5000/api/auth/register', user);
+      if (response.data.message) {
+        alert('Registered successfully!');
+        navigate('/login'); // Redirect to Login page after successful registration
+      }
     } catch (error) {
-      alert('Failed to register');
+      console.error('Registration error:', error.response ? error.response.data : error.message);
+      alert('Failed to register: ' + (error.response ? error.response.data.message : error.message));
     }
   };
 

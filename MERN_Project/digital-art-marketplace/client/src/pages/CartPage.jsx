@@ -1,40 +1,10 @@
-import React, { useState } from "react";
-import "./CartPage.css";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import React from 'react';
+import './CartPage.css';
 
-const CartPage = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      title: "Abstract Universe",
-      artist: "John Doe",
-      price: 120,
-      quantity: 1,
-      image: "https://via.placeholder.com/100",
-    },
-    {
-      id: 2,
-      title: "Cyberpunk City",
-      artist: "Jane Smith",
-      price: 95,
-      quantity: 1,
-      image: "https://via.placeholder.com/100",
-    },
-  ]);
-
-  const handleQuantityChange = (id, change) => {
-    setCartItems((prevItems) =>
-      prevItems
-        .map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + change } : item
-        )
-        .filter((item) => item.quantity > 0)
-    );
-  };
-
-  const handleRemove = (id) => {
-    setCartItems(cartItems.filter((item) => item.id !== id));
-  };
-
+const CartPage = ({ cartItems, removeFromCart, updateQuantity }) => {
+  // Calculate total price
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
@@ -55,15 +25,14 @@ const CartPage = () => {
                 <p>By {item.artist}</p>
                 <p>${item.price}</p>
                 <div className="quantity-controls">
-                  <button onClick={() => handleQuantityChange(item.id, -1)}>
-                    -
-                  </button>
+                  <button onClick={() => updateQuantity(item.id, -1)}>-</button>
                   <span>{item.quantity}</span>
-                  <button onClick={() => handleQuantityChange(item.id, 1)}>
-                    +
-                  </button>
+                  <button onClick={() => updateQuantity(item.id, 1)}>+</button>
                 </div>
-                <button className="remove-btn" onClick={() => handleRemove(item.id)}>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeFromCart(item.id)}
+                >
                   Remove
                 </button>
               </div>
@@ -73,7 +42,11 @@ const CartPage = () => {
       )}
       <div className="cart-summary">
         <h3>Total: ${totalPrice}</h3>
-        <button className="checkout-btn" disabled={cartItems.length === 0}>
+        <button
+          className="checkout-btn"
+          disabled={cartItems.length === 0}
+          onClick={() => alert('Proceeding to checkout!')}
+        >
           Proceed to Checkout
         </button>
       </div>
