@@ -1,0 +1,125 @@
+.cart-page {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+  
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+  
+.empty-cart {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+}
+  
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+  
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+}
+  
+.art-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+  
+.item-info {
+    flex: 1;
+}
+  
+.item-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+  
+.item-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+  
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+  
+.quantity-controls button {
+    background: #ddd;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+.quantity-controls button:hover {
+    background: #ccc;
+}
+  
+.remove-btn {
+    background: #3023e6;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  
+.remove-btn:hover {
+    background: #ec28d2;
+}
+  
+.cart-summary {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #eee;
+    border-radius: 8px;
+}
+  
+.cart-summary h3 {
+    margin: 0;
+}
+  
+.checkout-btn {
+    background: #3023e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+  
+.checkout-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+  
+.checkout-btn:hover:not(:disabled) {
+    background: #2116b5;
+}

@@ -1,0 +1,56 @@
+.collections-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .featured-collections, .all-artworks {
+    margin-bottom: 40px;
+  }
+  
+  .featured-grid, .artworks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .featured-item, .artwork-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .featured-item:hover, .artwork-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .featured-item img, .artwork-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .featured-item h3, .artwork-item h3 {
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .featured-item p, .artwork-item p {
+    padding: 10px;
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+  }

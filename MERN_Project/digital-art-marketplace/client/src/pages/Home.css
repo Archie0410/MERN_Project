@@ -1,0 +1,327 @@
+/* Global Styles */
+.home {
+  font-family: 'Poppins', sans-serif;
+  color: linear-gradient(135deg, #0d27bb, #88edff);
+  background: #7eb9f5;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #4c28eb, #79ecfc);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px #8ce2f833;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content button {
+  background: #271adb;
+  color: #fcfcfc;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-content button:hover {
+  background: #ec4fd2;
+  color: #fff;
+  transform: translateY(-5px);
+}
+/* Featured Artworks */
+.featured-artworks {
+  padding: 6rem 2rem;
+  text-align: center;
+  background:#7eb9f5 ;
+}
+
+
+.featured-artworks h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.art-card {
+  perspective: 2000px;
+  cursor: pointer;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.art-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.art-card.flipped .art-card-inner {
+  transform: rotateY(180deg);
+}
+
+.art-card-front,
+.art-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  padding: 1.5rem;
+  background: #7656ec;
+}
+
+.art-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #9861ff, #1d9dcf);
+  color: #fff;
+}
+
+.art-card img {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 10px;
+}
+
+.art-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #1a1a1a;
+}
+
+.art-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.art-card button {
+  background: #4d27f3;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.art-card button:hover {
+  background: #ff3b2f;
+  transform: scale(1.05);
+}
+
+/* Categories */
+.categories {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f541dd, #2575fc);
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  color: #fff;
+}
+
+.categories h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img {
+  width: 100%;
+  height: 150px; /* Fixed height for consistency */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border-radius: 10px;
+}
+
+.category-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* Artist Spotlight */
+.artist-spotlight {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #8d60f5, #95caf5);
+}
+
+.artist-spotlight h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.artist-card {
+  background:  #ebe5e9;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.artist-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.artist-card h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color:#141414
+}
+
+.artist-card p {
+  font-size: 1rem;
+  color: #080808;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #662fe7, #95caf5);
+  clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+  color: #ffffff;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #300399, #95caf5);
+  color: #fff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #85dafc;
+}
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .hero, .categories, .testimonials {
+    padding: 4rem 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .art-card img, .category-card img {
+    height: 180px; /* Adjusted image height for small screens */
+  }
+
+  .art-card h3, .category-card h3 {
+    font-size: 1.2rem; /* Adjusted font size for titles */
+  }
+
+  .category-card {
+    padding: 1rem; /* Reduced padding inside category cards */
+  }
+}

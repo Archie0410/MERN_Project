@@ -1,0 +1,86 @@
+.about-us-container {
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.about-us-container h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.about-us-content {
+  text-align: left;
+}
+
+.about-section,
+.contact-section,
+.contributors-section,
+.social-media-section {
+  margin-bottom: 2rem;
+}
+
+.about-section h3,
+.contact-section h3,
+.contributors-section h3,
+.social-media-section h3 {
+  font-size: 1.8rem;
+  color: #3023e6;
+  margin-bottom: 1rem;
+}
+
+.about-section p,
+.contact-section p,
+.contributors-section p,
+.social-media-section p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.contact-section ul,
+.contributors-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-section ul li,
+.contributors-section ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.contact-section a {
+  color: #3023e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #3023e6;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-links a {
+  background: #3023e6;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #3023e6;
+}
